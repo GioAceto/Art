@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ArtPiece from "./artpiece/ArtPiece";
-import "./ArtTable.css";
 
 // 477392
 
@@ -38,7 +37,7 @@ const ArtTable = () => {
 
   return (
     <div>
-      {loading && <h2>Loading...</h2>}
+      {loading && <h2 className="loading">Loading...</h2>}
       {!loading && <ArtPiece props={data} />}
     </div>
   );

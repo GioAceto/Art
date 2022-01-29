@@ -1,5 +1,5 @@
 import React from "react";
-import "./ArtPiece.css";
+import ImageNA from "./ImageNA";
 
 const ArtPiece = ({ props }) => {
   const {
@@ -18,12 +18,20 @@ const ArtPiece = ({ props }) => {
       <tbody>
         <tr>
           <td>
-            <img src={primaryImageSmall} alt={title}></img>
+            {primaryImageSmall === "" ? (
+              <ImageNA />
+            ) : (
+              <img src={primaryImageSmall} alt={title}></img>
+            )}
           </td>
         </tr>
         <tr>
           <td>
-            <p>{artistDisplayName}</p>
+            {artistDisplayName === "" ? (
+              <p className="bold">Artist: Unknown</p>
+            ) : (
+              <p className="bold">Artist: {artistDisplayName}</p>
+            )}
           </td>
         </tr>
         <tr>

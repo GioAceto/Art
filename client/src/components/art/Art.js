@@ -15,15 +15,15 @@ const ArtTable = () => {
           "https://collectionapi.metmuseum.org/public/collection/v1/objects"
         );
         const total = res1.data.total;
-        const objIds = res1.data.objectIDs;
+        const objIdsArr = res1.data.objectIDs;
         const randomIndex = Math.floor(Math.random() * total + 1);
-        const randomObj = objIds[randomIndex];
+        const id = objIdsArr[randomIndex];
         // console.log(total);
-        // console.log(objIds);
+        // console.log(objIdsArr);
         // console.log(randomIndex);
-        // console.log(randomObj)
+        // console.log(id);
         const res2 = await axios.get(
-          `https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomObj}`
+          `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
         );
         const artObject = res2.data;
         setData(artObject);

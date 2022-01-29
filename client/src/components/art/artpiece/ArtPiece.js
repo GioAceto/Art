@@ -36,17 +36,17 @@ const ArtPiece = ({ props }) => {
         </tr>
         <tr>
           <td>
-            <p>{department}</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <p>{culture}</p>
           </td>
         </tr>
         <tr>
           <td>
             <p>{period}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>{department}</p>
           </td>
         </tr>
       </tbody>

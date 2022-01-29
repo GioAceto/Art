@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-const ArtPiece = () => {
-  return <div></div>;
+const ArtPiece = ({ props }) => {
+  const { title, primaryImageSmall, department } = props;
+  console.log(props);
+  return (
+    <div>
+      <h2>{title}</h2>
+    </div>
+  );
 };
 
 export default ArtPiece;

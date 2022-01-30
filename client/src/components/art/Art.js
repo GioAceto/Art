@@ -3,20 +3,22 @@ import axios from "axios";
 import ArtPiece from "./artpiece/ArtPiece";
 
 // 477392
+// 6311
 
-const ArtTable = () => {
-  const [loading, setLoading] = useState(true);
+const Art = () => {
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
+      setLoading(true);
       try {
         const res1 = await axios.get(
           "https://collectionapi.metmuseum.org/public/collection/v1/objects"
         );
         const total = res1.data.total;
         const objIdsArr = res1.data.objectIDs;
-        const randomIndex = Math.floor(Math.random() * total + 1);
+        const randomIndex = Math.floor(Math.random() * total);
         const id = objIdsArr[randomIndex];
         // console.log(total);
         // console.log(objIdsArr);
@@ -31,7 +33,7 @@ const ArtTable = () => {
         console.log("Error page not found");
       }
       setLoading(false);
-    }
+    };
     fetchData();
   }, []);
 
@@ -43,4 +45,4 @@ const ArtTable = () => {
   );
 };
 
-export default ArtTable;
+export default Art;

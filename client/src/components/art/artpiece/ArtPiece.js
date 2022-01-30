@@ -6,7 +6,6 @@ const ArtPiece = ({ props }) => {
     title,
     primaryImageSmall,
     department,
-    isHighlight,
     culture,
     period,
     artistDisplayName,
